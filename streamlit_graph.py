@@ -7,7 +7,7 @@ from langchain_community.graphs import Neo4jGraph
 from langchain_community.document_loaders import TextLoader, Docx2txtLoader, UnstructuredExcelLoader, PyPDFLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_experimental.graph_transformers import LLMGraphTransformer
-from EA.Config.configuration import (main_key, NEO4J_URI, NEO4J_PASSWORD, NEO4J_USERNAME, OPENAI_API_VERSION)
+from EA.Config.configurations import (main_key, NEO4J_URI, NEO4J_PASSWORD, NEO4J_USERNAME, OPENAI_API_VERSION)
 
 # Load environment variables from .env file
 load_dotenv()
