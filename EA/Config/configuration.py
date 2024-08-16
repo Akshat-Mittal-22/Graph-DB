@@ -36,6 +36,7 @@ if not IS_DEVELOPMENT:
     client = SecretClient(vault_url=KVUri, credential=credential)
 
     main_key = client.get_secret(openapi_key).value
+    os.environ["OPENAI_API_KEY"] = main_key
     vector_store = client.get_secret(vectorsecret).value
     computer_vision_key = client.get_secret(computer_vision).value
     DB_PASSWORD = client.get_secret(MySQL_db_pwd).value
