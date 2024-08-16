@@ -35,8 +35,7 @@ if not IS_DEVELOPMENT:
     credential = DefaultAzureCredential()
     client = SecretClient(vault_url=KVUri, credential=credential)
 
-    main_key = client.get_secret(openapi_key).value
-    os.environ["OPENAI_API_KEY"] = main_key
+    main_key = "2355a247f79f4b8ea2adaa0929cd32c2"
     vector_store = client.get_secret(vectorsecret).value
     computer_vision_key = client.get_secret(computer_vision).value
     DB_PASSWORD = client.get_secret(MySQL_db_pwd).value
