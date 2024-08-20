@@ -12,15 +12,6 @@ from EA.Config.configuration import (main_key, NEO4J_URI, NEO4J_PASSWORD, NEO4J_
 # Load environment variables from .env file
 load_dotenv()
 
-# Set OpenAI environment variables
-os.environ["OPENAI_API_VERSION"] = OPENAI_API_VERSION
-os.environ["OPENAI_API_TYPE"] = "azure"
-os.environ["OPENAI_API_KEY"] = main_key
-os.environ["AZURE_OPENAI_ENDPOINT"] = "https://ea-openai.openai.azure.com/"
-os.environ["NEO4J_URI"] = NEO4J_URI
-os.environ["NEO4J_USERNAME"] = NEO4J_USERNAME
-os.environ["NEO4J_PASSWORD"] = NEO4J_PASSWORD
-
 st.title("Document to Neo4j Knowledge Graph")
 
 uploaded_file = st.file_uploader("Upload a document", type=["pdf", "docx", "xlsx"])
@@ -45,7 +36,7 @@ if uploaded_file is not None:
     documents = loader.load_and_split()
 
     # Split text into smaller chunks
-    text_splitter = CharacterTextSplitter(chunk_size=200, chunk_overlap=20)
+    text_splitter = CharacterTextSplitter(chunk_size=8000, chunk_overlap=20)
     texts = text_splitter.split_documents(documents)
 
     st.write("### Extracted Text Chunks")
@@ -76,5 +67,4 @@ if uploaded_file is not None:
     end_time = time.time()  # End the timer
     time_taken = end_time - start_time
 
-    st.success(
-        f"Document processed and stored in Neo4j Knowledge Graph successfully! Time taken: {time_taken:.2f} seconds")
+    st.success(f"Document processed and stored in Neo4j Knowledge Graph successfully! Time taken: {time_taken:.2f} seconds")
