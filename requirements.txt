@@ -11,16 +11,10 @@ azure-functions
 azure-identity==1.15.0
 azure-core==1.29.5
 azure-common==1.1.28
-wordcloud~=1.9.3
-scikit-learn~=1.4.0
 azure-storage-blob==12.19.0
 azure-identity
-assemblyai~=0.23.1
 azure-keyvault-secrets==4.8.0
-pandasai~=2.0.37
-duckduckgo-search==6.2.1
 mutagen==1.47.0
-pillow==10.2.0
 python-dotenv~=1.0.1
 Flask[async]
 Flask~=3.0.0
@@ -34,8 +28,6 @@ openpyxl==3.1.2
 reportlab~=4.1.0
 mysql-connector-python~=8.4.0
 pyodbc~=5.1.0
-msrest~=0.7.1
-pymongo~=4.7.2
 PyPDF2~=3.0.1
 PyMySQL~=1.1.0
 docx2txt~=0.8
